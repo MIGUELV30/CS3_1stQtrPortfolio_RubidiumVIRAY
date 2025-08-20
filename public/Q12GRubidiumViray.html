@@ -8,14 +8,38 @@
     <div>Meal Price:
         <br />
         <input id="inp_mp">
-        <button id = "btn_submit">Submit</button>
+        
+    </div>
+    
+    <div>Tip:
+        <br />
+        <input id="inp_tip">
+       
+    </div>
+
+    <div>Service Charge:
+        <br /> 
+        <input id = "inp_sc">
+       
+    </div>
+
+    <div>
+        <button id = "btnsubmit" onclick="totalMeal()">Accept input</button>
+    </div>
+    <div>
+        <label id="totalMeal">Total Meal : </label>
     </div>
 
     <script>
         function totalMeal() {
               // place your JS code here
-            
-         
+                let mp = parseFloat(document.getElementById("inp_mp").value) || 0;
+                let tip = parseFloat(document.getElementById("inp_tip").value) || 0;
+                let sc = parseFloat(document.getElementById("inp_sc").value) || 0;
+
+                totalMeal = mp + tip + (sc / 100 * mp) 
+                let label = document.getElementById("totalMeal");
+                label.textContent= "Total Meal: " + totalMeal;
         }
     </script>
 
